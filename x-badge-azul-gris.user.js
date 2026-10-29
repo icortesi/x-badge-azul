@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         X: atenuar o colapsar posts de cuentas con badge azul
-// @namespace    https://github.com/TU_USUARIO/x-badge-azul
+// @namespace    https://github.com/icortesi/x-badge-azul
 // @version      2.1.0
 // @description  Colapsa (o pone en gris) los posts de cuentas con verificación azul en X/Twitter. / Collapses or dims posts from blue-check accounts on X.
 // @author       Iván Cortés
 // @license      MIT
-// @homepageURL  https://github.com/TU_USUARIO/x-badge-azul
-// @supportURL   https://github.com/TU_USUARIO/x-badge-azul/issues
-// @updateURL    https://raw.githubusercontent.com/TU_USUARIO/x-badge-azul/main/x-badge-azul-gris.user.js
-// @downloadURL  https://raw.githubusercontent.com/TU_USUARIO/x-badge-azul/main/x-badge-azul-gris.user.js
+// @homepageURL  https://github.com/icortesi/x-badge-azul
+// @supportURL   https://github.com/icortesi/x-badge-azul/issues
+// @updateURL    https://raw.githubusercontent.com/icortesi/x-badge-azul/main/x-badge-azul-gris.user.js
+// @downloadURL  https://raw.githubusercontent.com/icortesi/x-badge-azul/main/x-badge-azul-gris.user.js
 // @match        https://x.com/*
 // @match        https://twitter.com/*
 // @match        https://mobile.x.com/*
