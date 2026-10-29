@@ -8,7 +8,7 @@ Userscript para [Tampermonkey](https://www.tampermonkey.net/) que colapsa (o pon
 
 1. Instala Tampermonkey en tu navegador.
 2. Abre este enlace y dale **Instalar**:
-   **[x-badge-azul-gris.user.js](https://raw.githubusercontent.com/TU_USUARIO/x-badge-azul/main/x-badge-azul-gris.user.js)**
+   **[x-badge-azul-gris.user.js](https://raw.githubusercontent.com/icortesi/x-badge-azul/main/x-badge-azul-gris.user.js)**
 
 Las actualizaciones llegan solas desde este repo.
 
