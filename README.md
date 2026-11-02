@@ -1,41 +1,46 @@
-# X: posts de badge azul, colapsados
+# X: collapse blue-check posts
 
-Userscript para [Tampermonkey](https://www.tampermonkey.net/) que colapsa (o pone en gris) los posts de cuentas con verificación azul en X/Twitter.
+A [Tampermonkey](https://www.tampermonkey.net/) userscript that collapses (or dims) posts from blue-check accounts you don't follow on X/Twitter.
 
-*Userscript that collapses (or dims) posts from blue-check accounts on X/Twitter.*
+## Installation
 
-## Instalación
+1. Install Tampermonkey in your browser.
+2. Open this link and click **Install**:
+   **[x-badge-azul-gris.user.js](https://raw.githubusercontent.com/TU_USUARIO/x-badge-azul/main/x-badge-azul-gris.user.js)**
 
-1. Instala Tampermonkey en tu navegador.
-2. Abre este enlace y dale **Instalar**:
-   **[x-badge-azul-gris.user.js](https://raw.githubusercontent.com/icortesi/x-badge-azul/main/x-badge-azul-gris.user.js)**
+Updates are delivered automatically from this repo.
 
-Las actualizaciones llegan solas desde este repo.
+## What it does
 
-## Qué hace
+- Posts from blue-check accounts **you don't follow** are replaced by a slim bar: `Post de ✔ @account [Mostrar]`.
+- Click **Mostrar** to expand the post; it stays open while you browse.
+- Accounts you follow are left alone, and so are posts reposted by someone you follow (or by you).
+- Quote posts are handled separately: if an account without a badge quotes a blue-check account you don't follow, only the quote is collapsed.
+- Gold (organizations) and gray (government) badges are untouched by default.
 
-- Los posts de cuentas con badge azul aparecen como una barrita: `Post de ✔ @cuenta [Mostrar]`.
-- Al darle **Mostrar**, el post se abre y se queda abierto mientras navegas.
-- Los quote-tweets se manejan por separado: si alguien sin badge cita a una cuenta azul, solo se colapsa la cita.
-- Los badges dorados (organizaciones) y grises (gobierno) no se tocan por defecto.
+## Configuration
 
-## Configuración
+Edit the `CONFIG` block at the top of the script from the Tampermonkey editor:
 
-Edita el bloque `CONFIG` al inicio del script desde el editor de Tampermonkey:
-
-| Opción | Default | Descripción |
+| Option | Default | Description |
 |---|---|---|
-| `mode` | `'collapse'` | `'collapse'` = barrita con botón · `'dim'` = texto en gris |
-| `blue` / `gold` / `gray` | `true` / `false` / `false` | Qué tipos de badge afectar |
-| `collapseQuotes` | `true` | Colapsar también quote-tweets |
-| `textColor`, `opacity`, `revealOnHover` | — | Solo para modo `dim` |
+| `mode` | `'collapse'` | `'collapse'` = slim bar with a button · `'dim'` = grayed-out text |
+| `blue` / `gold` / `gray` | `true` / `false` / `false` | Which badge types to affect |
+| `collapseQuotes` | `true` | Also collapse quote posts |
+| `spareFollowed` | `true` | Don't collapse accounts you follow |
+| `spareFollowedReposts` | `true` | Don't collapse posts reposted by accounts you follow |
+| `textColor`, `opacity`, `revealOnHover` | — | `dim` mode only |
 
-> Nota: si editas `CONFIG`, una actualización del script puede sobrescribir tus cambios.
+> Note: if you edit `CONFIG`, a script update may overwrite your changes.
 
-## Limitaciones
+## How it knows who you follow
 
-Depende de los selectores internos de X (`data-testid`) y del color del badge. Si X cambia su DOM, puede dejar de funcionar; abre un issue.
+The script reads the API responses X already loads (it makes no requests of its own) and stores the list of accounts you follow in `localStorage`. On first use it starts empty and learns as you scroll, so some followed accounts may be collapsed at first. If it has no data for an account, it collapses it by default.
 
-## Licencia
+## Limitations
+
+It relies on X's internal selectors (`data-testid`), the badge color and the field names in its API responses. If X changes any of these, the script may stop working. Please open an issue.
+
+## License
 
 MIT
